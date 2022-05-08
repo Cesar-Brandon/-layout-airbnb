@@ -1,0 +1,278 @@
+@import 'utils';
+
+* {
+		margin: 0;
+		padding: 0;
+}
+
+body {
+		font-family: $tipografia;
+		background-color: $gris-suave;
+		// -- Dark Mode --
+		&.dark {
+				background-color: $gris-oscuro;
+
+				.menubar{
+						background-color: $negro;
+						box-shadow: 0 2px 10px $gris-oscuro;
+
+						.search {
+								background-color: $gris-oscuro;
+								border: 1px $gris-semioscuro solid;
+
+								input {
+										color: $blanco;
+								}
+						}
+						#moon {
+								.sun {
+										display: flex;
+										margin: 0 0 4.5px 0;
+								}
+								.moon {
+										display: none;
+								}
+
+								&:hover{
+										filter: invert(50%);
+								}
+						}
+
+						.user{
+								img {
+										filter: invert(100%);
+								}
+								ul{
+										background: rgba($blanco, $alpha: 0.2);
+										border: transparent;
+										li{
+												a{
+														color: $blanco;
+												}
+												&:hover{
+														border: 1px $blanco solid;
+												}
+										}
+								}
+						}		
+				}
+				.container{
+						h1 {
+								color: $blanco;
+						}
+				}
+
+		}
+		// -- End Dark Mode --
+}
+
+.menubar {
+		background-color: $blanco;
+		width: 100%;
+		height: 70px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		box-shadow: 0 2px 10px #D0D0D0;
+
+		.logo {
+				img {
+						width: 135px;
+						height: 42px;
+						margin-left: 152px;
+				}		
+		}
+		.search {
+				width: 280px;
+				height: 50px;
+				background-color: $blanco;
+				margin: 0 auto;
+				display: flex;
+				align-items: center;
+				// justify-content: space-between;
+				border-radius: 50px;
+				border: 1px #D0D0D0 solid;
+				// box-shadow:  5px 5px 20px #D0D0D0;
+				input {
+						margin: 0 0 0 20px;
+						background-color: transparent;
+						outline: none;
+						border: 0;
+						font-size: 18px;
+						width: 200px;
+						height: 20px;
+
+						&::placeholder{
+								background-color: transparent;
+						}
+				}
+				div {
+						width: 40px;
+						height: 40px;
+						background-color: $rojo;
+						border-radius: 50%;
+						display: flex;
+						align-items: center;
+						margin-left: 10px;
+						margin: 0 0 0 15px;
+						transition: 0.2s;
+						cursor: pointer;
+
+						img {
+								margin: 0 auto;
+
+								&:hover {
+										width: 21px;
+										height: 21px;
+								}
+						}
+
+						&:hover {
+								background-color: $rojo-violeta;
+						}
+				}
+
+				&:hover {
+
+				}
+		}
+		.sun {
+				display: none;
+		}
+		#moon {
+				margin: 0 50px 0 0;
+				cursor: pointer;
+
+				&:hover{
+						filter: invert(50%);
+				}
+		}
+
+		.user {
+				margin: 0 152px 0 0;
+				cursor: pointer;
+				list-style: none;
+
+				ul {
+						box-sizing: border-box;
+						width: 180px;
+						height: 220px;
+						display: flex;
+						flex-direction: column;
+						background: rgba(255,255,255,0.50);
+						backdrop-filter: blur(10px);
+						border: 1px solid $gris-medio;
+						position: absolute;
+						top: 65px;
+						right: 148px;
+						border-radius: 10px;
+						visibility: hidden;
+						transition: 0.2s;
+
+						li {
+								list-style: none;
+								line-height: 26.5pt;
+								transition: 0.2s;
+								padding-top: 4.5px;
+								border: transparent;
+								a{
+										color: $negro;
+										text-decoration: none;
+										margin: 0 0 0 15px;		
+								}
+								&:hover {
+										border: 1px $gris-oscuro solid;
+										border-radius: 10px;
+										font-weight: bold;
+										font-size: 18px;
+								}		
+						}
+				}
+				&:hover > ul {
+						visibility: visible;
+						top: 55px;
+				}
+
+		}
+}
+
+button {
+		border: none;
+		background-color: transparent;
+}
+
+.container {
+		width: 1620px;
+		height: 760px;
+		// background-color: $gris-medio;
+		margin: 50px 0 0 152px;
+
+		h1 {
+				font-size: 40px;
+				color: $gris-oscuro;
+		}
+
+		.grilla {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				.card {
+						width: 390px;
+						height: 640px;
+						background-color: $gris-semioscuro;
+						border-radius: 15px;
+						margin: 80px 0 0 0;
+						color: $blanco;
+						overflow: hidden;
+						cursor: pointer;
+						img {
+								width: 390;
+								height: 360;
+								transition: 0.5s;
+								object-fit: cover;
+						}
+
+						div {
+								margin: 20px 0 0 30px;
+								transition: 0.5s;
+
+								h2 {
+										font-size: 40px;
+										font-weight: 600;
+								}
+								p {
+										margin: 15px 0 0 0;
+										font-size: 20px;
+										font-weight: 400;
+								}
+						}
+						&:hover {
+								img{
+										transform: scale(1.5);
+								}
+								div{
+										margin-top: 95px;
+								}
+						}
+				}
+
+
+				.sunampe{
+						background-color: $violeta;
+				}
+				.carmen {
+						background-color: $naranja;
+
+				}
+				.chincha {
+						background-color: $rojo-oscuro;
+
+				}
+				.grocio{
+						background-color: $rojo;
+
+				}
+
+		}
+}
